@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Menumiz HR - Leave Management</title>
+
+        <link rel="icon" type="image/png" href="assets/img/logo.png" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" />
+        
+        <!-- Styles -->
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@loadingio/loading-bar@0.1.1/dist/loading-bar.min.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+
+        <!-- Scripts -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.full.min.js"></script>
+		<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@loadingio/loading-bar@0.1.1/dist/loading-bar.min.js"></script>
+		<script src="assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="app-container">
+			<!-- Main Content -->
+			<main class="main-content">
+                <!-- Header -->
+				<header class="main-content-header">
+                    <div class="main-content-header-logo">
+                        <img width="32px" height="32px" src="assets/img/logo.png" alt="HRHR Logo" class="logo-img" />
+                        <h3 class="title">HRHR</h3>
+                        <button class="sidebar-nav-toggle" aria-label="Toggle Menu">
+                            <img width="25px" height="24px" src="assets/img/icons/header/min-max-vertical-nav-icon.svg" alt="Sidebar Toggle" class="sidebar-toggle" />
+                        </button>
+                    </div>
+					<div class="main-content-header-content">
+                        <div class="main-content-header-left">
+                            <div class="main-content-header-logo-container">
+                                <img width="24px" height="24px" src="assets/img/icons/header/header-logo.png" alt="Sidebar Toggle" class="logo" />
+                                <p class="title">Menumiz HR</p>
+                            </div>
+                        </div>
+                        <div class="main-content-header-right">
+                            <div class="search-bar">
+                                <input
+                                    type="search"
+                                    placeholder="Enter any keyword..."
+                                    aria-label="Search"
+                                />
+                            </div>
+                            <div class="user-menu">
+                                <button
+                                    class="settings-btn"
+                                    aria-label="Settings"
+                                >
+                                    <img width="24px" height="24px" src="assets/img/icons/vuesax/outline/settings.png" alt="Settings" class="settings-icon" />
+                                </button>
+                                <button
+                                    class="notifications-btn"
+                                    aria-label="Notifications"
+                                >
+                                    <img width="24px" height="24px" src="assets/img/icons/vuesax/outline/notification.png" alt="Notifications" class="notifications-icon" />
+                                    <div class="marker yellow"></div>
+                                </button>
+                                <div class="user-profile">
+                                    <img src="assets/img/users/login-user.png" alt="User" class="avatar" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</header>
+
+                <div class="main-content-container">
+                    <!-- Sidebar Navigation -->
+                    <aside class="sidebar-nav-container">
+                        <nav class="sidebar-nav" aria-label="Main navigation">
+                            <ul class="nav-items">
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/dashboard.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/calendar.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Calendar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/profile-2user.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Recruitment
+                                        <span class="nav-link-counter">10</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/profile-user.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Employees
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link active">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/outline/clock.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Leave
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/chart.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Organisation
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/dollar-circle.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Billings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/message-question.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Engagement
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/monitor.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Development
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/medal-star.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Performance
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/bold/chart.png" alt="Dashboard Sidebar Nav Icon" class="nav-link-icon" />
+                                        Reports
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <section class="main-section-container">
+                        <!-- Navigation Tabs -->
+                        <nav class="tab-navigation" aria-label="Leave management tabs">
+                            <div class="tab-container">
+                                <div class="tab-wrapper">
+                                    <a href="#" class="tab-item active">
+                                        Leave Management
+                                        <div class="marker yellow"></div>
+                                    </a>
+                                    <a href="#" class="tab-item">Leave Requests</a>
+                                    <a href="#" class="tab-item">Leave Types</a>
+                                    <a href="#" class="tab-item">Leave Calendar</a>
+                                    <a href="#" class="tab-item">Leave Report</a>
+                                    <a href="#" class="tab-item">Leave Approver</a>
+                                    <a href="#" class="tab-item">
+                                        <img width="24px" height="24px" src="assets/img/icons/vuesax/outline/settings.png" alt="Settings" class="settings-icon" />
+                                    </a>
+                                </div>
+                            </div>
+                        </nav>
+
+                        <!-- Dashboard Content -->
+                        <section class="dashboard">
+                            <h1>Dashboard</h1>
+                            
+                            <!-- Heatmap Section -->
+                            <swiper-container init="false" class="mySwiper" scrollbar-hide="true" slides-per-view="2.1" space-between="20" free-mode="true">
+                                <swiper-slide>
+                                    <div class="heatmap-card-container">
+                                        <div class="heatmap-card">
+                                            <div class="heatmap-header">
+                                                <h2>Heatmap</h2>
+                                                <div class="filters swiper-no-swiping">
+                                                    <select
+                                                        class="date-filter"
+                                                        aria-label="Select Sick Day"
+                                                    >
+                                                        <option>SICKDAY</option>
+                                                    </select>
+                                                    <input
+                                                        type="text"
+                                                        class="month-filter"
+                                                        id="monthFilter"
+                                                        placeholder="Select Month"
+                                                    ></input>
+                                                </div>
+                                            </div>
+
+                                            <div class="heatmap-day-tabs swiper-no-swiping">
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Mon</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Tue</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Wed</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Thu</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item selected">
+                                                    <div class="content">Fri</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Sat</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Sun</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="leave-stats">
+                                                <div class="stat-item">
+                                                    <h3>Sick Leave</h3>
+                                                    <div class="ldBar label-center" data-value="50" data-preset="circle"></div>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <h3>Annual Leave</h3>
+                                                    <div class="ldBar label-center" data-value="30" data-preset="circle"></div>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <h3>Emergency Leave</h3>
+                                                    <div class="ldBar label-center" data-value="20" data-preset="circle"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heatmap-description">
+                                            <p>Most popular day: Friday</p>
+                                        </div>
+                                    </div>
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <div class="heatmap-card-container">
+                                        <div class="heatmap-card">
+                                            <div class="heatmap-header">
+                                                <h2>Heatmap</h2>
+                                                <div class="filters swiper-no-swiping">
+                                                    <select
+                                                        class="date-filter1"
+                                                        aria-label="Select Sick Day"
+                                                    >
+                                                        <option>SICKDAY</option>
+                                                    </select>
+                                                    <input
+                                                        type="text"
+                                                        class="month-filter"
+                                                        id="monthFilter1"
+                                                        placeholder="Select Month"
+                                                    ></input>
+                                                </div>
+                                            </div>
+
+                                            <div class="heatmap-day-tabs swiper-no-swiping">
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Mon</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Tue</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Wed</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Thu</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item selected">
+                                                    <div class="content">Fri</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Sat</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Sun</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="leave-stats">
+                                                <div class="stat-item">
+                                                    <h3>Sick Leave</h3>
+                                                    <div class="ldBar label-center" data-value="50" data-preset="circle"></div>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <h3>Annual Leave</h3>
+                                                    <div class="ldBar label-center" data-value="30" data-preset="circle"></div>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <h3>Emergency Leave</h3>
+                                                    <div class="ldBar label-center" data-value="20" data-preset="circle"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heatmap-description">
+                                            <p>Most popular day: Friday</p>
+                                        </div>
+                                    </div>
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <div class="heatmap-card-container">
+                                        <div class="heatmap-card">
+                                            <div class="heatmap-header">
+                                                <h2>Heatmap</h2>
+                                                <div class="filters swiper-no-swiping">
+                                                    <select
+                                                        class="date-filter2"
+                                                        aria-label="Select Sick Day"
+                                                    >
+                                                        <option>SICKDAY</option>
+                                                    </select>
+                                                    <input
+                                                        type="text"
+                                                        class="month-filter"
+                                                        id="monthFilter2"
+                                                        placeholder="Select Month"
+                                                    ></input>
+                                                </div>
+                                            </div>
+
+                                            <div class="heatmap-day-tabs  swiper-no-swiping">
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Mon</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Tue</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Wed</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Thu</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item selected">
+                                                    <div class="content">Fri</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Sat</div>
+                                                </div>
+                                                <div class="heatmap-day-tab-item">
+                                                    <div class="content">Sun</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="leave-stats">
+                                                <div class="stat-item">
+                                                    <h3>Sick Leave</h3>
+                                                    <div class="ldBar label-center" data-value="50" data-preset="circle"></div>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <h3>Annual Leave</h3>
+                                                    <div class="ldBar label-center" data-value="30" data-preset="circle"></div>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <h3>Emergency Leave</h3>
+                                                    <div class="ldBar label-center" data-value="20" data-preset="circle"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heatmap-description">
+                                            <p>Most popular day: Friday</p>
+                                        </div>
+                                    </div>
+                                </swiper-slide>
+                            </swiper-container>
+
+                            <!-- Leave Requests Table -->
+                            <div class="leave-requests">
+                                <div class="section-header">
+                                    <h2>Leave Requests</h2>
+                                    <div class="view-controls">
+                                        <button class="btn-list active" id="btnList">
+                                            List View
+                                        </button>
+                                        <button class="btn-month" id="btnMonth">Month View</button>
+                                    </div>
+                                </div>
+
+                                <div class="section-content">
+                                    <div class="section-content-filters">
+                                        <nav class="tab-navigation" aria-label="Leave requests tabs">
+                                            <div class="tab-container">
+                                                <div class="tab-wrapper">
+                                                    <a href="#" class="tab-item active">All</a>
+                                                    <a href="#" class="tab-item">Approved</a>
+                                                    <a href="#" class="tab-item">Rejected</a>
+                                                </div>
+                                            </div>
+                                        </nav>
+
+                                        <div class="month-filter-container">
+                                            <button
+                                                class="btn-prev"
+                                                aria-label="Month Filter Previous Button"
+                                            >
+                                                <img width="20px" height="20px" src="assets/img/icons/vuesax/bold/arrow-left.png" alt="prev" class="prev-icon" />
+                                            </button>
+                                            <input
+                                                type="text"
+                                                class="month-filter"
+                                                id="leaveReqMonthFilter"
+                                                placeholder="Select Month"
+                                            ></input>
+                                            <button
+                                                class="btn-next"
+                                                aria-label="Month Filter Next Button"
+                                            >
+                                                <img width="20px" height="20px" src="assets/img/icons/vuesax/bold/arrow-right.png" alt="next" class="next-icon" />
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <table id="leaveReqsTable" class="leave-reqs-table">
+                                        <tfoot>
+                                            <tr>
+                                                <th>
+                                                    <div class="leave-reqs-table-header-id-col-container">
+                                                        <input name="leaveReqsTableHeaderCheckbox" id="leaveReqsTableHeaderCheckbox" type="checkbox" class="leave-reqs-table-checkbox" aria-label="Select all" />
+                                                        <label for="leaveReqsTableHeaderCheckbox"></label>
+                                                        #
+                                                    </div>
+                                                </th>
+                                                <th>Name</th>
+                                                <th>Period</th>
+                                                <th>Day(s)</th>
+                                                <th>Leave Type</th>
+                                                <th>Actions</th>
+                                                <th style="width: 150px;"></th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+
+                <!-- Selected User Count Action Prompt -->
+                <div class="leave-reqs-count-action hidden">
+                    <div class="title">
+                        Total: <span class="count"></span>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-reject">REJECT</button>
+                        <button class="btn-approve">APPROVE</button>
+                    </div>
+                </div>
+
+                <!-- Notification -->
+                <div class="notifications-container hidden">
+                    <div class="notifications-header">
+                        <div class="notifications-title-wrapper">
+                            <div class="notifications-title">Notifications</div>
+                        </div>
+                        <div class="notifications-actions-wrapper">
+                            <button class="notifications-actions-button">
+                                Mark all as read
+                                <img width="16px" height="16px" src="assets/img/icons/mark-as-read-outline.png" alt="Mark As Read" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="notifications-cards-container">
+                        <div class="notifications-card unread">
+                            <div class="notifications-card-image-container">
+                                <div class="notifications-card-image-container-wrapper">
+                                    <div class="marker"></div>
+                                    <div class="image-wrapper">
+                                        <img width="40px" height="40px" class="image" src="assets/img/users/user-1.png" alt="User Avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notifications-card-content-container">
+                                <div class="wrapper">
+                                    <span class="user-name">Mark Jacobs</span>
+                                    <span class="message">has applied for leave and is currently awaiting approval.</span>
+                                </div>
+                                <div class="timestamp">Today at 09:42 AM</div>
+                            </div>
+                        </div>
+                        <div class="notifications-card unread">
+                            <div class="notifications-card-image-container">
+                                <div class="notifications-card-image-container-wrapper">
+                                    <div class="marker"></div>
+                                    <div class="image-wrapper">
+                                        <img width="40px" height="40px" class="image" src="assets/img/users/user-2.png" alt="User Avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notifications-card-content-container">
+                                <div class="wrapper">
+                                  <span class="user-name">Charlie Kristen</span>
+                                  <span class="message">has applied for leave and is currently awaiting approval.</span>
+                                </div>
+                                <div class="timestamp">Today at 08:23 AM</div>
+                            </div>
+                        </div>
+                        <div class="notifications-card unread">
+                            <div class="notifications-card-image-container">
+                                <div class="notifications-card-image-container-wrapper">
+                                    <div class="marker"></div>
+                                    <div class="image-wrapper">
+                                        <img width="40px" height="40px" class="image" src="assets/img/users/user-3.png" alt="User Avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notifications-card-content-container">
+                                <div class="wrapper">
+                                    <span class="user-name">Nur Fariha binti Maslan</span>
+                                    <span class="message">has applied for leave and is currently awaiting approval.</span>
+                                </div>
+                                <div class="timestamp">Yesterday at 17:30 PM</div>
+                            </div>
+                        </div>
+                        <div class="notifications-card">
+                            <div class="notifications-card-image-container">
+                                <div class="notifications-card-image-container-wrapper">
+                                    <div class="marker"></div>
+                                    <div class="image-wrapper">
+                                        <img width="40px" height="40px" class="image" src="assets/img/users/user-3.png" alt="User Avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notifications-card-content-container">
+                                <div class="wrapper">
+                                    <span class="user-name">Nur Fariha binti Maslan</span>
+                                    <span class="message">has applied for leave and is currently awaiting approval.</span>
+                                </div>
+                                <div class="timestamp">Yesterday at 14:45 PM</div>
+                            </div>
+                        </div>
+                        <div class="notifications-card">
+                            <div class="notifications-card-image-container">
+                                <div class="notifications-card-image-container-wrapper">
+                                    <div class="marker"></div>
+                                    <div class="image-wrapper">
+                                        <img width="40px" height="40px" class="image" src="assets/img/users/user-5.png" alt="User Avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notifications-card-content-container">
+                                <div class="wrapper">
+                                    <span class="user-name">Nishant Talwar</span>
+                                    <span class="message">has applied for leave and is currently awaiting approval.</span>
+                                </div>
+                                <div class="timestamp">Yesterday at 14:42 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</main>
+		</div>
+	</body>
+</html>
